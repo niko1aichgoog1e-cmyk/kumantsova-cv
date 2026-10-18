@@ -63,7 +63,7 @@ a{color:inherit}
 .traces{position:absolute;right:-60px;top:20px;width:min(720px,90vw);height:auto;pointer-events:none;opacity:.9}
 .traces path{fill:none;stroke:var(--trace);stroke-width:2;stroke-linecap:round;stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 2.6s cubic-bezier(.6,.1,.2,1) forwards}
 .traces circle{fill:var(--bg);stroke:var(--trace);stroke-width:2;opacity:0;animation:fade .4s forwards}
-.traces .pulse{fill:var(--accent);stroke:none;opacity:1;animation:none;filter:drop-shadow(0 0 6px var(--accent))}
+.traces .pulse{fill:var(--accent);stroke:none;opacity:0;animation:fade .3s 2.4s forwards!important;filter:drop-shadow(0 0 6px var(--accent))}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fade{to{opacity:1}}
 .hero .wrap{position:relative}
@@ -220,7 +220,7 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:.85rem;display:flex;just
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   h1 .ln span,.rv{transform:none;opacity:1}
-  .traces path{stroke-dashoffset:0}.traces circle{opacity:1}
+  .traces path{stroke-dashoffset:0}.traces circle{opacity:1}.traces .pulse{display:none}
   .g-bar{transform:none}
 }
 @media print{
@@ -352,7 +352,7 @@ ua:{
   "nav.lifecycle":"Життєвий цикл","nav.experience":"Досвід","nav.skills":"Навички","nav.contact":"Контакти",
   "hero.status":"Відкрита до нових проєктів",
   "hero.first":"Катерина","hero.last":"Куманцова",
-  "hero.lead":"Веду технічні продукти від інженерної ідеї та запиту на зміну — до серійного виробництва. 8+ років координую R&D, Software, QA, виробництво й постачання так, щоб рішення ухвалювались вчасно, а статуси були прозорими для всіх.",
+  "hero.lead":"Веду технічні продукти від інженерної ідеї та запиту на зміну — до серійного виробництва. 8+ років координую кросфункціональні команди — R&D, Software, QA, виробництво — так, щоб рішення ухвалювались вчасно, а статуси були прозорими для всіх.",
   "hero.city":"Харків, Україна",
   "cta.mail":"Написати","cta.pdf":"Резюме PDF",
   "life.title":"Від ідеї до серійного продукту",
@@ -364,7 +364,7 @@ ua:{
   "sk.title":"Навички та інструменти","sk.sub":"Методології, з якими працюю щодня, і стек, у якому живуть мої проєкти.",
   "edu.title":"Освіта","edu.sub":"Інженерна база + професійне управління проєктами — тому я говорю з R&D однією мовою.",
   "ct.k":"Контакти","ct.title":"Шукаєте PM, який доведе продукт до виробництва?",
-  "ct.sub":"Розглядаю ролі Project Manager у продуктових IT- та hardware-компаніях. Напишіть — відповім швидко.",
+  "ct.sub":"Розглядаю ролі Project Manager у продуктових IT- та hardware-компаніях. Буду рада поспілкуватися.",
   "ft":"Project Manager · Hardware & IT",
   stats:[["8","+","років у Project Management"],["4","","ролі у 3 компаніях — від Assistant PM до PM"],["6","","функцій в одному процесі змін: SW, QA, R&D, Production, Supply Chain, сертифікація"],["2","","ступені ХАІ: авіоніка та управління проєктами"]],
   stages:[
@@ -383,7 +383,7 @@ ua:{
   jobs:[
     {co:"Ajax Systems",role:"Project Manager (Engineering Change Management)",from:"2024-11",to:"2026-03",cur:true,
      tags:[["ECR lifecycle",1],["Pre-production",1],["Serial production",1],["Certification",1],["Jira",0]],
-     b:["Вела <b>повний життєвий цикл Engineering Change Requests</b> — від отримання запиту до впровадження зміни в продукт.",
+     b:["Координувала <b>повний життєвий цикл Engineering Change Requests</b> — від отримання запиту до впровадження зміни в продукт.",
         "Координувала <b>6 функцій</b>: Software Development, QA, R&D, Production, Supply Chain та сертифікацію.",
         "Аналізувала ризики та <b>оцінювала вплив змін</b> на функціональність продукту, строки реалізації й суміжні процеси.",
         "Узгоджувала пріоритети між командами та стейкхолдерами, забезпечуючи <b>своєчасне прийняття рішень</b>.",
@@ -394,7 +394,7 @@ ua:{
      b:["Керувала проєктами <b>розробки та впровадження нових продуктів</b>.",
         "Планувала проєкти, <b>формувала роадмепи</b> й контролювала виконання ключових етапів.",
         "Координувала роботу <b>R&D, Software Development, QA та виробництва</b>.",
-        "Керувала ризиками та контролем змін протягом усього життєвого циклу проєктів.",
+        "Забезпечувала управління ризиками та контроль змін протягом усього життєвого циклу проєктів.",
         "Погоджувала вимоги й пріоритети зі стейкхолдерами; стежила за актуальністю технічної та проєктної документації.",
         "Брала участь у побудові та вдосконаленні проєктних процесів."]},
     {co:"AQTech",role:"Project Manager",from:"2018-12",to:"2024-04",promo:"Підвищення з Assistant PM",
@@ -419,14 +419,14 @@ ua:{
     ["Ключові компетенції",["IT Project Management","Управління кросфункціональними командами","Планування та координація","Управління ризиками","Change Management","Управління беклогом","Stakeholder Management","Побудова та оптимізація процесів","Пріоритизація задач","Планування ресурсів","Проєктна документація","Фасилітація зустрічей","Контроль термінів"],"wide"]
   ],
   edu:[["2016","Управління проєктами","Магістр · Національний аерокосмічний університет ім. М. Є. Жуковського «ХАІ»"],["2014","Авіоніка","Бакалавр · Національний аерокосмічний університет ім. М. Є. Жуковського «ХАІ»"]],
-  months:["січ","лют","бер","кві","тра","чер","лип","сер","вер","жов","лис","гру"],
+  months:["січ.","лют.","бер.","квіт.","трав.","черв.","лип.","серп.","вер.","жовт.","лист.","груд."],
   y:"р.",m:"міс.",now:""
 },
 en:{
   "nav.lifecycle":"Lifecycle","nav.experience":"Experience","nav.skills":"Skills","nav.contact":"Contact",
   "hero.status":"Open to new projects",
   "hero.first":"Kateryna","hero.last":"Kumantsova",
-  "hero.lead":"I take technical products from an engineering idea or change request all the way to serial production. 8+ years coordinating R&D, Software, QA, production and supply chain — so decisions get made on time and status is transparent to everyone.",
+  "hero.lead":"I take technical products from an engineering idea or change request all the way to serial production. 8+ years coordinating cross-functional teams — R&D, Software, QA, production — so decisions get made on time and status is transparent to everyone.",
   "hero.city":"Kharkiv, Ukraine",
   "cta.mail":"Email me","cta.pdf":"CV as PDF",
   "life.title":"From idea to serial product",
@@ -438,7 +438,7 @@ en:{
   "sk.title":"Skills & tools","sk.sub":"Methodologies I use every day and the stack my projects live in.",
   "edu.title":"Education","edu.sub":"An engineering foundation plus formal project management — so I speak the same language as R&D.",
   "ct.k":"Contact","ct.title":"Looking for a PM who gets the product to production?",
-  "ct.sub":"I’m open to Project Manager roles at product IT and hardware companies. Drop me a line — I reply quickly.",
+  "ct.sub":"I’m open to Project Manager roles at product IT and hardware companies. I’d be glad to talk.",
   "ft":"Project Manager · Hardware & IT",
   stats:[["8","+","years in Project Management"],["4","","roles at 3 companies — from Assistant PM to PM"],["6","","functions in one change process: SW, QA, R&D, Production, Supply Chain, Certification"],["2","","KhAI degrees: avionics and project management"]],
   stages:[
@@ -457,7 +457,7 @@ en:{
   jobs:[
     {co:"Ajax Systems",role:"Project Manager (Engineering Change Management)",from:"2024-11",to:"2026-03",cur:true,
      tags:[["ECR lifecycle",1],["Pre-production",1],["Serial production",1],["Certification",1],["Jira",0]],
-     b:["Owned the <b>full lifecycle of Engineering Change Requests</b> — from intake to the change landing in the product.",
+     b:["Coordinated the <b>full lifecycle of Engineering Change Requests</b> — from intake to the change landing in the product.",
         "Coordinated <b>6 functions</b>: Software Development, QA, R&D, Production, Supply Chain and Certification.",
         "Analysed risks and <b>assessed the impact of changes</b> on product functionality, delivery timelines and related processes.",
         "Aligned priorities across teams and stakeholders to enable <b>timely decision-making</b>.",
@@ -521,7 +521,7 @@ function render(){
   document.querySelectorAll("[data-t]").forEach(el=>{el.innerHTML=L[el.dataset.t]});
   document.querySelectorAll(".lang span").forEach(s=>s.classList.toggle("on",s.dataset.l===lang));
 
-  $("#stats").innerHTML=L.stats.map(([n,s,p])=>`<div class="stat"><div class="n"><span class="cnt" data-to="${n}">${n}</span>${s?`<sup>${s}</sup>`:""}</div><p>${p}</p></div>`).join("");
+  $("#stats").innerHTML=L.stats.map(([n,s,p])=>`<div class="stat"><div class="n"><span class="cnt" data-to="${n}">${reduce||$("#stats").dataset.done?n:0}</span>${s?`<sup>${s}</sup>`:""}</div><p>${p}</p></div>`).join("");
   $("#track").innerHTML='<div class="prog"></div>'+L.stages.map(([h,p],i)=>`<div class="stage" style="transition-delay:${i*.3}s"><div class="dot" style="transition-delay:${i*.35}s">0${i+1}</div><h4>${h}</h4><p>${p}</p></div>`).join("");
   $("#strengths").innerHTML=L.strengths.map(([ic,h,p])=>`<div class="card rv"><div class="ic">${ICONS[ic]}</div><h3>${h}</h3><p>${p}</p></div>`).join("");
 
@@ -547,7 +547,7 @@ let io;
 function observe(){
   if(io)io.disconnect();
   const els=document.querySelectorAll(".rv,#flow,#gantt,#stats");
-  if(!("IntersectionObserver" in window)||reduce){els.forEach(e=>e.classList.add("in"));return}
+  if(!("IntersectionObserver" in window)||reduce){els.forEach(e=>e.classList.add("in"));document.querySelectorAll(".cnt").forEach(e=>e.textContent=e.dataset.to);return}
   io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add("in");
     if(e.target.id==="stats"&&!e.target.dataset.done){e.target.dataset.done=1;countUp(e.target)}
     io.unobserve(e.target)}),{threshold:.15,rootMargin:"0px 0px -40px 0px"});
